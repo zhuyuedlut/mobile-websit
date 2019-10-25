@@ -3,16 +3,16 @@ import LoginBox from './Login';
 import RegisterBox from './Register';
 import '../../common/css/login.css';
 
-function Login(){
-    const [status, setStatus] = useState('login');
-    console.log("login");
+function Login(props){
+    console.log(props);
+    const [rotateDeg, setRotateDeg] = useState(0);
     return (
         <div id="login_boxWrap">
             <h2 className="login_register"><span>登录&注册</span></h2>
             <div className="login_register_box">
-                <div className="box">
-                    <LoginBox  setStatus={setStatus}  status={status} />
-                    <RegisterBox setStatus={setStatus} status={status} />
+                <div className="box" style={{transform : `rotateY(${rotateDeg}deg)`}}>
+                    <LoginBox  setRotateDeg={setRotateDeg} />
+                    <RegisterBox setRotateDeg={setRotateDeg} />
                 </div>
             </div>
         </div>

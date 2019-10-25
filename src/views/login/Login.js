@@ -1,10 +1,10 @@
 import React from 'react';
 
 function LoginBox(props){
-    const {status, setStatus} = props;
-    console.log("LoginBox")
+    const {setRotateDeg} = props;
+    console.log("LoginBox");
     return (
-        <div className="login_box" style={{transform : `rotateY(${status === 'login'? 0 : 180}deg)`}}>
+        <div className="login_box">
             <figure className="user_img">
                 <img src={require('../../common/images/user_img.png')}  />
                 <figcaption>如有账号，请直接登录</figcaption>
@@ -24,7 +24,7 @@ function LoginBox(props){
                     <a href="#">忘记密码？</a>
                 </p>
                 <button className="form_btn">登录</button>
-                <p className="form_tip">没有帐号？<a onClick={()=>{setStatus('register')}} href="#">立即注册</a></p>
+                <p className="form_tip">没有帐号？<a onClick={()=>{setRotateDeg(180)}} href="#">立即注册</a></p>
             </div>
         </div>
     )
