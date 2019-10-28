@@ -1,17 +1,9 @@
 import HTTP from './http';
 
-export const LOGIN_BEGIN = 'LOGIN_BEGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
-
-export function loginBegin(username){
-    return {
-        type : LOGIN_BEGIN,
-        payload : {
-            username
-        }
-    }
-}
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAILED = 'REGISTER_FAILED';
 
 export function loginSuccess(username){
     return {
@@ -31,13 +23,43 @@ export function loginFailed(){
     }
 }
 
-export function login({username, password}){
+export function registerSuccess(username){
+    return {
+        type : REGISTER_SUCCESS,
+        payload : {
+            username
+        }
+    }
+}
+
+export function registerFailed(){
+    return {
+        type : REGISTER_FAILED,
+        payload : {
+            username : ''
+        }
+    }
+}
+
+
+export function login(data){
     return dispatch=>{
-        dispatch(loginBegin());
-        return HTTP.post("/user/login", {username, password}).then(res=>{
+        return HTTP.post("/user/login", data).then(res=>{
             dispatch(res.data.code === 0 ? loginSuccess() : loginFailed());
+            return res.data;
         }).catch((e)=>{
             dispatch(loginFailed());
+        })
+    }
+}
+
+export function register(data){
+    return dispatch =>{
+        return HTTP.post("/user/register", data).then(res=>{
+            dispatch(res.data.code === 0 ? registerSuccess() : registerFailed());
+            return res.data;
+        }).catch((e)=>{
+            dispatch(registerFailed());
         })
     }
 }

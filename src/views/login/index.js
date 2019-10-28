@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import LoginBox from './Login';
 import RegisterBox from './Register';
 import '../../common/css/login.css';
 
-function Login(props){
-    console.log(props);
+function Login(){
     const [rotateDeg, setRotateDeg] = useState(0);
     return (
         <div id="login_boxWrap">

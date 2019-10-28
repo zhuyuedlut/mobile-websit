@@ -1,5 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import {NavLink, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+
 function Frame(props){
     const {children} = props;
     const [fold, setFold] = useState(false);
@@ -29,4 +31,8 @@ function Frame(props){
     )
 }
 
-export default Frame;
+export default connect((state)=>{
+    return {
+        username : state.login.name
+    }
+})(Frame);
