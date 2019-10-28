@@ -1,9 +1,11 @@
 import React, {Fragment, useState} from 'react';
-import {NavLink, Link} from 'react-router-dom';
+import {NavLink, Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {useBack} from '../../common/hook/index';
 
 function Frame(props){
-    const {children} = props;
+    const {children, username, location : {pathname : path}, history} = props;
+    const back = useBack(history);
     const [fold, setFold] = useState(false);
 
     function handleNavFold(){
@@ -14,7 +16,11 @@ function Frame(props){
         <Fragment>
             <header id="header">
                 <nav className="menu">
-                    <Link onClick={handleNavFold} to="">导航</Link>
+                    {
+                        path === '/login' ?
+                            <a className="header-btn-left iconfont icon-back" onClick={back}></a> :
+                            <a className="header-btn-left iconfont icon-hycaidan" onClick={handleNavFold}></a>
+                    }
                 </nav>
                 <h1 className="logo">miaov.com</h1>
                 <Link className="user" to="/login"></Link>
@@ -35,4 +41,4 @@ export default connect((state)=>{
     return {
         username : state.login.name
     }
-})(Frame);
+})(withRouter(Frame));
