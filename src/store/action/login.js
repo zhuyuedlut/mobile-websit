@@ -45,7 +45,7 @@ export function registerFailed(){
 export function login(data){
     return dispatch=>{
         return HTTP.post("/user/login", data).then(res=>{
-            dispatch(res.data.code === 0 ? loginSuccess() : loginFailed());
+            dispatch(res.data.code === 0 ? loginSuccess(data.username) : loginFailed());
             return res.data;
         }).catch((e)=>{
             dispatch(loginFailed());
@@ -56,7 +56,7 @@ export function login(data){
 export function register(data){
     return dispatch =>{
         return HTTP.post("/user/register", data).then(res=>{
-            dispatch(res.data.code === 0 ? registerSuccess() : registerFailed());
+            dispatch(res.data.code === 0 ? registerSuccess(data.username) : registerFailed());
             return res.data;
         }).catch((e)=>{
             dispatch(registerFailed());

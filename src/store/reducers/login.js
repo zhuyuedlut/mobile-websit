@@ -1,19 +1,19 @@
 import {LOGIN_SUCCESS, LOGIN_FAILED, REGISTER_SUCCESS, REGISTER_FAILED} from '../action/login';
 
 const defaultUserState = {
-    name : ''
+    username : ''
 };
 
 export default function user(state = defaultUserState, {type, payload}){
     switch (type) {
         case LOGIN_SUCCESS:
-            return {name : payload.name};
+            return {username : payload.username};
         case LOGIN_FAILED:
-            return {name : ''};
+            return {username : ''};
         case REGISTER_SUCCESS :
-            return {name: payload.name};
+            return {username: payload.username};
         case REGISTER_FAILED :
-            return {name : ''};
+            return {username : ''};
     }
     return state;
 }

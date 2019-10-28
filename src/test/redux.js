@@ -1,8 +1,6 @@
 import {createStore, combineReducers} from 'redux';
 
 const reducer1 = (state = 0, action)=>{
-    console.log(state);
-    console.log(action);
     switch (action.type) {
         case 'add':
             return state + 1;
