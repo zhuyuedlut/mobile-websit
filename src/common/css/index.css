@@ -4,14 +4,15 @@
 }
 .banner_img {
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 .banner_list {
-  width: 400%;
+  float: left;
+  display: flex;
 }
 .banner_list li {
-  float: left;
-  width: 25%;
+  width: 100vw;
+  flex: none;
 }
 .banner_list img {
   width: 100%;
@@ -117,6 +118,7 @@
   position: absolute;
   left: 0.96rem;
   bottom: 0.24rem;
+  text-align: center;
 }
 .index_content .price {
   color: #f18cc4;
@@ -165,6 +167,19 @@
   color: #e15671;
 }
 .register_vip button {
+  width: 4rem;
+  height: 0.93333333rem;
+  padding: 0 0.13333333rem 0.16rem 0;
+  background: url('../images/once.png') no-repeat;
+  background-size: 100% auto;
+  border: none;
+  box-sizing: content-box;
+  font: 0.45333333rem / 0.93333333rem pingfang;
+  color: #fff;
+}
+.register_vip a {
+  margin: 0 auto;
+  display: block;
   width: 4rem;
   height: 0.93333333rem;
   padding: 0 0.13333333rem 0.16rem 0;
@@ -289,7 +304,7 @@
   vertical-align: top;
   width: 0.32rem;
   height: 0.32rem;
-  background: url(../images//chat.png) no-repeat;
+  background: url(../images/chat.png) no-repeat;
   margin-top: 0.14666667rem;
   margin-right: 0.12rem;
   background-size: 100% auto;

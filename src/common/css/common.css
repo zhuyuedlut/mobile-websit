@@ -2,7 +2,7 @@
   height: 1.2rem;
   background: #323436;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   left: 0;
   z-index: 999;
@@ -73,7 +73,10 @@
   z-index: 1;
   padding-top: 1.2rem;
   min-height: 12.82666667rem;
+  height: calc(100vh - 1.2rem);
   transition: .5s transform;
+  overflow: hidden;
+  background-color: white;
 }
 #footer {
   background: #323436;
@@ -161,4 +164,9 @@
 }
 #menu a:first-child {
   border-top: 1px solid rgba(255, 255, 255, .3);
+}
+.pageWrap {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
 }

@@ -16,6 +16,7 @@ export default function user(state = defaultUserState, {type, payload}){
             return {username: payload.username};
         case REGISTER_FAILED :
             return {username : ''};
+        default :
+            return state;
     }
-    return state;
 }

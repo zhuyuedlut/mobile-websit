@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import store from './store/index';
@@ -6,8 +6,6 @@ import list from './router/config';
 import Frame from './common/component/Frame';
 import './common/css/common.css';
 import './common/css/reset.css';
-
-
 
 function App() {
     return (
