@@ -6,7 +6,7 @@ export const LOGIN_OUT = 'LOGIN_OUT';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILED = 'REGISTER_FAILED';
 
-export function loginSuccess(username){
+function loginSuccess(username){
     return {
         type : LOGIN_SUCCESS,
         payload : {
@@ -15,7 +15,7 @@ export function loginSuccess(username){
     }
 }
 
-export function loginFailed(){
+function loginFailed(){
     return {
         type : LOGIN_FAILED,
         payload : {
@@ -24,7 +24,7 @@ export function loginFailed(){
     }
 }
 
-export function loginOutSuccess(){
+function loginOutSuccess(){
     return {
         type : LOGIN_OUT,
         payload : {
@@ -33,7 +33,7 @@ export function loginOutSuccess(){
     }
 }
 
-export function registerSuccess(username){
+function registerSuccess(username){
     return {
         type : REGISTER_SUCCESS,
         payload : {
@@ -42,7 +42,7 @@ export function registerSuccess(username){
     }
 }
 
-export function registerFailed(){
+function registerFailed(){
     return {
         type : REGISTER_FAILED,
         payload : {

@@ -71,7 +71,7 @@ function LoginBox(props){
                     }
                 </p>
                 <button className="form_btn" onClick={handleLoginBtn}>登录</button>
-                <p className="form_tip">没有帐号？<a onClick={()=>{setRotateDeg(180)}} href="#">立即注册</a></p>
+                <p className="form_tip">没有帐号？<a onClick={()=>{setRotateDeg(180)}}>立即注册</a></p>
             </div>
         </div>
     )

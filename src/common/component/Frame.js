@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect, useRef} from 'react';
+import React, {Fragment, useState} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {useBack} from '../../common/hook/index';
@@ -13,8 +13,8 @@ function Frame(props){
     return(
         <Fragment>
             <Header handleNavFold={handleNavFold} back={back} path={path} username={username} />
-            <Menu fold={fold} />
-            <div id="main" style={{transform : `translateX( ${fold ? 4.5 : 0} rem)`}}>
+            <Menu />
+            <div id="main" style={{transform : `translateX(${fold ? 4.5 : 0}rem)`}}>
                 {children}
             </div>
         </Fragment>
